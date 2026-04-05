@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Lost & Found DApp</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-wrapper">
+    <div class="auth-left">
+        <div class="auth-brand">
+            <div class="brand-icon">🔍</div>
+            <h1>Lost & <span>Found</span></h1>
+            <p>Blockchain-powered item recovery platform. Transparent. Secure. Decentralized.</p>
+        </div>
+        <div class="auth-features">
+            <div class="feature-item"><span>🔗</span> Stored on Ethereum blockchain</div>
+            <div class="feature-item"><span>🔒</span> MetaMask wallet authentication</div>
+            <div class="feature-item"><span>📍</span> Location-based item search</div>
+            <div class="feature-item"><span>✅</span> Verified claim system</div>
+        </div>
+    </div>
+
+    <div class="auth-right">
+        <div class="auth-card">
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="showTab('user')">User Login</button>
+                <button class="tab-btn" onclick="showTab('admin')">Admin Login</button>
+            </div>
+
+            <!-- USER LOGIN -->
+            <div id="tab-user" class="tab-pane active">
+                <h2>Welcome Back</h2>
+                <p class="auth-sub">Connect your MetaMask wallet to login</p>
+
+                <div id="msg-user" class="alert" style="display:none"></div>
+
+                <div class="wallet-connect-box" id="wallet-box">
+                    <div class="wallet-icon">🦊</div>
+                    <p>Connect MetaMask to authenticate</p>
+                    <button class="btn btn-primary btn-block btn-lg" onclick="connectWallet()">
+                        <span id="connect-btn-text">Connect MetaMask</span>
+                        <span id="connect-spinner" class="spinner" style="display:none"></span>
+                    </button>
+                </div>
+
+                <div id="wallet-connected" style="display:none">
+                    <div class="alert alert-success" id="wallet-info">
+                        ✅ Connected: <strong id="wallet-addr"></strong>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-lg" onclick="loginUser()">
+                        <span id="login-btn-text">Login / Register</span>
+                        <span id="login-spinner" class="spinner" style="display:none"></span>
+                    </button>
+                </div>
+
+                <div class="auth-footer">
+                    Don't have an account? <a href="register.html">Register here</a>
+                </div>
+            </div>
+
+            <!-- ADMIN LOGIN -->
+            <div id="tab-admin" class="tab-pane">
+                <h2>Admin Panel</h2>
+                <p class="auth-sub">Admin login with wallet (first Ganache account)</p>
+
+                <div id="msg-admin" class="alert" style="display:none"></div>
+
+                <div class="wallet-connect-box">
+                    <div class="wallet-icon">🛡️</div>
+                    <p>Admin must use the deployer wallet (account[0] in Ganache)</p>
+                    <button class="btn btn-primary btn-block btn-lg" onclick="connectAdminWallet()">
+                        Connect Admin Wallet
+                    </button>
+                </div>
+
+                <div id="admin-connected" style="display:none">
+                    <div class="alert alert-success">
+                        ✅ Admin wallet: <strong id="admin-addr"></strong>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-lg" onclick="loginAdmin()">Login as Admin</button>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top:1.5rem">
+            <div class="blockchain-status">
+                <div class="dot" id="chain-dot" style="background:#ef4444"></div>
+                <span id="chain-status">Not connected</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Web3.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js"></script>
+<!-- ⚠️ BLOCKCHAIN CONNECTION — edit CONTRACT_ADDRESS in this file after deploying -->
+<script src="js/blockchain.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

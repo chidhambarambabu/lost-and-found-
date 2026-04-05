@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Items — Admin</title>
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar-brand" href="dashboard.html">🛡️ Admin <span>Panel</span></a>
+    <div class="navbar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="user-accounts.html">User Accounts</a>
+        <a href="all-items.html" class="active">All Items</a>
+        <a href="claim-requests.html">Claim Requests</a>
+        <a href="#" onclick="logout()">Logout</a>
+        <span class="wallet-badge" id="wallet-display">🦊 ...</span>
+    </div>
+</nav>
+
+<div class="page-header"><h1>📦 All Items</h1><p>View and manage all items on the blockchain</p></div>
+
+<div class="container page-body">
+    <div class="search-bar" style="margin-bottom:1.5rem">
+        <input type="text" id="search" placeholder="Search by name, location..." oninput="filterItems()">
+        <select id="filter-type" onchange="filterItems()">
+            <option value="">All Types</option>
+            <option value="lost">Lost</option>
+            <option value="found">Found</option>
+        </select>
+        <select id="filter-cat" onchange="filterItems()">
+            <option value="">All Categories</option>
+            <option>Electronics</option><option>Wallet/Purse</option><option>Keys</option>
+            <option>Documents/ID</option><option>Jewelry</option><option>Clothing</option>
+            <option>Bag/Backpack</option><option>Books/Stationery</option><option>Vehicle</option><option>Pet</option><option>Other</option>
+        </select>
+        <select id="filter-status" onchange="filterItems()">
+            <option value="">All Status</option>
+            <option value="active">Active</option>
+            <option value="resolved">Resolved</option>
+        </select>
+    </div>
+    <div id="count" style="margin-bottom:1rem;color:var(--text-muted);font-size:0.9rem"></div>
+    <div id="items-table"><div style="color:var(--text-muted)">Loading items...</div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js"></script>
+<script src="../js/blockchain.js"></script>
+<script src="../js/admin-items.js"></script>
+</body>
+</html>

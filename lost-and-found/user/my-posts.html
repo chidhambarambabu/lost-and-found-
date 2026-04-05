@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Posts — Lost & Found DApp</title>
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar-brand" href="dashboard.html">🔍 Lost &amp; <span>Found</span></a>
+    <div class="navbar-nav">
+        <a href="search.html">Search Items</a>
+        <a href="post-item.html">Post Item</a>
+        <a href="my-posts.html" class="active">My Posts</a>
+        <a href="my-claims.html">My Claims</a>
+        <a href="profile.html">Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+        <span class="wallet-badge" id="wallet-display">🦊 ...</span>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>📋 My Posts</h1>
+    <p>Items you've posted on the blockchain</p>
+</div>
+
+<div class="container page-body">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem">
+        <div id="post-count" style="color:var(--text-muted);font-size:0.9rem"></div>
+        <a href="post-item.html" class="btn btn-primary">➕ New Post</a>
+    </div>
+    <div id="my-posts-grid" class="card-grid">
+        <div style="color:var(--text-muted)">Loading your posts...</div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js"></script>
+<script src="../js/blockchain.js"></script>
+<script src="../js/my-posts.js"></script>
+</body>
+</html>

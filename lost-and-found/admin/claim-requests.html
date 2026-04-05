@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Requests — Admin</title>
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar-brand" href="dashboard.html">🛡️ Admin <span>Panel</span></a>
+    <div class="navbar-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="user-accounts.html">User Accounts</a>
+        <a href="all-items.html">All Items</a>
+        <a href="claim-requests.html" class="active">Claim Requests</a>
+        <a href="#" onclick="logout()">Logout</a>
+        <span class="wallet-badge" id="wallet-display">🦊 ...</span>
+    </div>
+</nav>
+
+<div class="page-header"><h1>📩 Claim Requests</h1><p>Review and manage all claim requests</p></div>
+
+<div class="container page-body">
+    <div style="margin-bottom:1rem;display:flex;gap:0.75rem;flex-wrap:wrap">
+        <button class="btn btn-outline btn-sm" onclick="filterClaims('all')">All</button>
+        <button class="btn btn-outline btn-sm" onclick="filterClaims('pending')">Pending</button>
+        <button class="btn btn-success btn-sm" onclick="filterClaims('approved')">Approved</button>
+        <button class="btn btn-danger btn-sm" onclick="filterClaims('rejected')">Rejected</button>
+    </div>
+    <div id="claims-table"><div style="color:var(--text-muted)">Loading claims...</div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js"></script>
+<script src="../js/blockchain.js"></script>
+<script src="../js/admin-claims.js"></script>
+</body>
+</html>

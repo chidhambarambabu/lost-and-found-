@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Items — Lost & Found DApp</title>
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar-brand" href="dashboard.html">🔍 Lost &amp; <span>Found</span></a>
+    <div class="navbar-nav">
+        <a href="search.html" class="active">Search Items</a>
+        <a href="post-item.html">Post Item</a>
+        <a href="my-posts.html">My Posts</a>
+        <a href="my-claims.html">My Claims</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="profile.html">Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+        <span class="wallet-badge" id="wallet-display">🦊 ...</span>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>🔍 Search Items</h1>
+    <p>Browse all lost and found items on the blockchain</p>
+</div>
+
+<div class="container page-body">
+    <!-- Search & Filters -->
+    <div class="search-bar">
+        <input type="text" id="search-text" placeholder="🔍 Search by name, description, location..." oninput="filterItems()">
+        <select id="filter-type" onchange="filterItems()">
+            <option value="">All Types</option>
+            <option value="lost">Lost Items</option>
+            <option value="found">Found Items</option>
+        </select>
+        <select id="filter-category" onchange="filterItems()">
+            <option value="">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Wallet/Purse">Wallet/Purse</option>
+            <option value="Keys">Keys</option>
+            <option value="Documents/ID">Documents/ID</option>
+            <option value="Jewelry">Jewelry</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Bag/Backpack">Bag/Backpack</option>
+            <option value="Books/Stationery">Books/Stationery</option>
+            <option value="Vehicle">Vehicle</option>
+            <option value="Pet">Pet</option>
+            <option value="Other">Other</option>
+        </select>
+        <select id="filter-location" onchange="filterItems()">
+            <option value="">All Locations</option>
+        </select>
+        <select id="filter-status" onchange="filterItems()">
+            <option value="">All Status</option>
+            <option value="active">Active</option>
+            <option value="resolved">Resolved</option>
+        </select>
+        <button class="btn btn-outline btn-sm" onclick="resetFilters()">Reset</button>
+    </div>
+
+    <div id="result-count" style="margin-bottom:1rem;color:var(--text-muted);font-size:0.9rem"></div>
+
+    <div id="items-grid" class="card-grid">
+        <div style="color:var(--text-muted)">Loading items from blockchain...</div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js"></script>
+<script src="../js/blockchain.js"></script>
+<script src="../js/search.js"></script>
+</body>
+</html>

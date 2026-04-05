@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard — Lost & Found DApp</title>
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a class="navbar-brand" href="dashboard.html">🔍 Lost &amp; <span>Found</span></a>
+    <div class="navbar-nav">
+        <a href="search.html">Search Items</a>
+        <a href="post-item.html">Post Item</a>
+        <a href="my-posts.html">My Posts</a>
+        <a href="my-claims.html">My Claims</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="profile.html">Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+        <span class="wallet-badge" id="wallet-display">🦊 ...</span>
+    </div>
+</nav>
+
+<div class="page-header">
+    <h1>Welcome, <span id="user-name">User</span>!</h1>
+    <p>Manage your lost & found items on the blockchain</p>
+</div>
+
+<div class="container page-body">
+    <!-- Stats -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;margin-bottom:2rem">
+        <div class="card" style="text-align:center">
+            <div style="font-size:2rem">📦</div>
+            <div style="font-size:1.75rem;font-weight:800;color:var(--primary)" id="total-items">-</div>
+            <div style="color:var(--text-muted);font-size:0.88rem">Total Items Posted</div>
+        </div>
+        <div class="card" style="text-align:center">
+            <div style="font-size:2rem">🔍</div>
+            <div style="font-size:1.75rem;font-weight:800;color:var(--accent)" id="total-claims">-</div>
+            <div style="color:var(--text-muted);font-size:0.88rem">Total Claims Made</div>
+        </div>
+        <div class="card" style="text-align:center">
+            <div style="font-size:2rem">✅</div>
+            <div style="font-size:1.75rem;font-weight:800;color:var(--success)" id="approved-claims">-</div>
+            <div style="color:var(--text-muted);font-size:0.88rem">Approved Claims</div>
+        </div>
+        <div class="card" style="text-align:center">
+            <div style="font-size:2rem">🔗</div>
+            <div style="font-size:0.78rem;font-weight:600;color:var(--primary);word-break:break-all" id="wallet-stat">-</div>
+            <div style="color:var(--text-muted);font-size:0.88rem;margin-top:0.25rem">Wallet Address</div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="card" style="margin-bottom:2rem">
+        <h3 style="margin-bottom:1.25rem">Quick Actions</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem">
+            <a href="post-item.html" class="btn btn-primary">➕ Post Lost Item</a>
+            <a href="post-item.html?type=found" class="btn btn-success">➕ Post Found Item</a>
+            <a href="search.html" class="btn btn-outline">🔍 Search Items</a>
+            <a href="my-posts.html" class="btn btn-outline">📋 My Posts</a>
+            <a href="my-claims.html" class="btn btn-outline">📩 My Claims</a>
+        </div>
+    </div>
+
+    <!-- Recent Items -->
+    <div class="card">
+        <h3 style="margin-bottom:1rem">Recent Items on Blockchain</h3>
+        <div id="recent-items" class="card-grid" style="margin-top:0.5rem">
+            <div style="color:var(--text-muted);font-size:0.9rem">Loading from blockchain...</div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.10.0/web3.min.js"></script>
+<script src="../js/blockchain.js"></script>
+<script src="../js/user-dashboard.js"></script>
+</body>
+</html>
