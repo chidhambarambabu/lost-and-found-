@@ -1,24 +1,24 @@
 
-# 🔍 Lost & Found Blockchain DApp
+# Lost & Found Blockchain DApp
 
 A decentralized application (DApp) that helps users report, search, and claim lost items securely using blockchain technology. This system ensures transparency, trust, and tamper-proof records using smart contracts.
 
 ---
 
-## 🚀 Features
+## Features
 
-* 🔐 MetaMask authentication (User & Admin)
-* 📦 Post lost and found items
-* 🔎 Search and filter items
-* ✅ Secure claim request system
-* 👨‍💼 Admin dashboard for management
-* 💬 Feedback system
-* 🖼️ Image upload (stored off-chain via XAMPP)
-* 🔗 Blockchain-based data storage (Ethereum smart contract)
+* MetaMask authentication (User & Admin)
+* Post lost and found items
+* Search and filter items
+* Secure claim request system
+* Admin dashboard for management
+* Feedback system
+* Image upload (stored off-chain via XAMPP)
+* Blockchain-based data storage (Ethereum smart contract)
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Frontend:** HTML, CSS, JavaScript
 * **Blockchain:** Solidity, Web3.js
@@ -28,7 +28,7 @@ A decentralized application (DApp) that helps users report, search, and claim lo
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 lost-and-found/
@@ -62,18 +62,18 @@ lost-and-found/
 
 ---
 
-## ⚡ Quick Start
+##  Quick Start
 
 1. Start Ganache
 2. Deploy smart contract using Remix
 3. Connect MetaMask to Ganache
 4. Update contract address & ABI in `js/blockchain.js`
 5. Start XAMPP and open:
-   👉 http://localhost/lost-and-found/login.html
+    http://localhost/lost-and-found/login.html
 
 ---
 
-## 🚀 Detailed Setup Guide
+##  Detailed Setup Guide
 
 ### STEP 1 — Start Ganache
 
@@ -96,7 +96,7 @@ lost-and-found/
 6. Select environment: **Injected Provider - MetaMask**
 7. Connect MetaMask → Deploy
 
-✅ Copy:
+Copy:
 
 * Contract Address
 * Contract ABI
@@ -164,18 +164,6 @@ http://localhost/lost-and-found/login.html
 
 * Switch MetaMask account
 * Register and login
-
----
-
-## 📸 Screenshots
-
-*(Add your screenshots here)*
-
-```
-screenshots/login.png
-screenshots/dashboard.png
-screenshots/admin.png
-```
 
 ---
 
